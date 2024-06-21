@@ -1,6 +1,6 @@
 function [longProdsamps, shortProdsamps, RFlongBank, RFshortBank, Years] = CFC114_priors(N)
 %% CFC-114
-load('CFC114/Input/CFC114Production.mat'); 
+load('CFC114Production.mat'); 
 
 prod_s = CFC114Production.short; 
 prod_l = CFC114Production.long; 
