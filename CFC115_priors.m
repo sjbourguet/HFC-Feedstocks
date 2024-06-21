@@ -2,7 +2,7 @@ function [longProdsamps,shortProdsamps,RFlongBank,RFshortBank,Years, short_fract
 
 %% CFC-115
 
-load('CFC115/Input/CFC115Production.mat'); 
+load('CFC115Production.mat'); 
 
 prod_s = CFC115Production.short; 
 prod_l = CFC115Production.long; 
