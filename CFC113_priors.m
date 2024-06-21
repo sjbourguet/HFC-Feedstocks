@@ -7,18 +7,18 @@ Sim_yrs = y1:y2;
 
 
 Prod_reported = NaN(size(Sim_yrs)); % Production is in Tonnes
-load('CFC113/Input/WMO2002.mat') % Use until 1988 - WMO data is the adjusted AFEAS data
+load('WMO2002.mat') % Use until 1988 - WMO data is the adjusted AFEAS data
 ytmp1 = find(WMO2002year==y1); 
 ytmp2 = find(WMO2002year==yswitch);
 Prod_reported(1:yswitch+1-y1) = Production(ytmp1:ytmp2);
 
-load('CFC113/Input/a5_na5.mat') % Use Article 5 and non A5 prod total from 1989 onwards
+load('a5_na5.mat') % Use Article 5 and non A5 prod total from 1989 onwards
 ytmp1 = find(a5_na5(:,1) == yswitch+1);
 ytmp2 = find(Sim_yrs == a5_na5(end,1));
 Prod_reported(1989-y1+1:ytmp2) = sum(a5_na5(ytmp1:end,[2:3]),2);
 Prod_reported(ytmp2:end) = sum(a5_na5(end,[2:3]),2);
 
-str = strcat('CFC113/Input/AFEAS_cfc113production.mat');
+str = strcat('AFEAS_cfc113production.mat');
 load(str,'longbank','shortbank','yr'); % in thousands of tonnes
 
 ind = find(yr == y1); 
